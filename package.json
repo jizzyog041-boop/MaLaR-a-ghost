@@ -1,0 +1,5 @@
+{"name":"malar-horror","version":"1.0.0","description":"Malar - 80s Kerala tharavadu horror","main":"main.js","author":"you",
+"scripts":{"prepare-assets":"node prepare.js","start":"node prepare.js && electron .","dist":"node prepare.js && electron-builder","android":"node prepare.js && npx cap sync android"},
+"dependencies":{"three":"0.128.0","@capacitor/core":"^6.0.0","@capacitor/android":"^6.0.0"},
+"devDependencies":{"electron":"^31.0.0","electron-builder":"^24.13.3","@capacitor/cli":"^6.0.0"},
+"build":{"appId":"com.malar.horror","productName":"Malar","files":["main.js","www/**"],"win":{"target":["portable","nsis"]},"linux":{"target":["AppImage"]},"mac":{"target":"dmg"}}}
