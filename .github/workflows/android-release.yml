@@ -14,11 +14,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
+
+      - name: Sync Capacitor Android
+        run: npm run android
 
       - name: Build Android Release
         working-directory: android
